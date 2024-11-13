@@ -1,10 +1,11 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-
-from app.handlers import router
+from database.models import async_main
+from handlers import router
 
 
 async def main():
+    await async_main()
     bot = Bot(token='7729254671:AAGtL_j2ZvT6bFrqCISHng_w_V8fPlvcGAQ')
     dp = Dispatcher()
     dp.include_router(router)

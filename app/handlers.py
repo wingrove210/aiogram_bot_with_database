@@ -4,7 +4,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
-import app.keyboards as kb
+import keyboards as kb
 
 router = Router()
 
@@ -17,8 +17,7 @@ class Register(StatesGroup):
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
-    await message.answer('Привет!', reply_markup=kb.main)
-    await message.reply('Как дела?')
+    await message.reply('Добро пожаловать в интернет магазин кросовок', reply_markup=kb.main)
 
 
 @router.message(Command('help'))
